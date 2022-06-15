@@ -38,17 +38,17 @@ export const EncryptionPage = () => {
       <div>
         <label className="text-gray-600 font-medium" htmlFor="email">Email:</label>
         <input className="border-solid border-gray-300 border py-2 px-4 w-full
-        rounded text-gray-700" type="email" id="email" required />
+        rounded text-gray-700" type="email" id="email" placeholder='Email' required />
       </div>
       <div>
         <label className="text-gray-600 font-medium" htmlFor="phonenumber">Phone Number:</label>
         <input className="border-solid border-gray-300 border py-2 px-4 w-full
-        rounded text-gray-700" type="tel" id="phonenumber" required />
+        rounded text-gray-700" type="tel" id="phonenumber" placeholder='Must start with +254' required />
       </div>
       <div>
         <label className="text-gray-600 font-medium" htmlFor="message">Message:</label>
         <textarea className="border-solid border-gray-300 border py-20 px-4 w-full
-        rounded text-gray-700" rows={3} cols={5} id="message" required />
+        rounded text-gray-700" rows={3} cols={5} id="message" placeholder='Message' required />
       </div>
       <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border py-3 px-6 font-semibold text-md rounded"
       type="submit">{status}</button>
