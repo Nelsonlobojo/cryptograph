@@ -6,9 +6,7 @@
 /node_modules
 /.pnp
 .pnp.js
-server.js
-tailwind.config.js
-postcss.config.js
+.env
 
 # testing
 /coverage
