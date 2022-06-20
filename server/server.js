@@ -9,12 +9,12 @@ const app = express();
 
 // environment variables decoding using dot env
 dotenv.config();
-/*
+
 //imports for sending message via Twilio
 const accountSid = process.env.REACT_APP_TWILIO_ACCOUNT_SID;
 const authToken = process.env.REACT_APP_TWILIO_AUTH_TOKEN;
 const client = require('twilio')(accountSid, authToken);
-*/
+
 
 // building the path
 const buildPath = path.join(__dirname, '..', 'build');
@@ -43,10 +43,9 @@ function decrypt3DES(data, key) {
 
 // security key that will be shared with the client via otp and encryption
 
-const securityKey = crypto.randomBytes(32);
-console.log(securityKey);
+const securityKey = crypto.randomBytes(32).toString('base64');
 
-/*
+
 // email sending function
 
 app.post('/send', (req, res) => {
@@ -131,6 +130,6 @@ app.post('/decrypt', (req, res) => {
 app.listen(3030, () => {
   console.log('server start on port 3030');
 });
-*/
+
 
 

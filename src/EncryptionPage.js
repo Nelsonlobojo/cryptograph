@@ -59,8 +59,6 @@ export const EncryptionPage = () => {
         <div className="w-6/12 sm:w-4/12 px-4">
           <img src={encrypt} alt="..." className="shadow-lg rounded-full max-w-full h-auto align-middle border-none" />
         </div>
-
-
         {result && (
           <p className={`${result.success ? 'success' : 'error'}`}>
             {result.message}
@@ -97,35 +95,36 @@ export const EncryptionPage = () => {
           <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border py-3 px-6 font-semibold text-md rounded"
             type="submit">Submit</button>
         </form>
-
-
-
-        <form className="w-full max-w-lg m-auto py-10 mt-10 px-10 border" onSubmit={decrypt}>
-          <h1>Decryption Page</h1>
-          <div>
-            <label className="text-gray-600 font-medium" htmlFor="message"> Encrypted Message:</label>
-            <textarea className="border-solid border-gray-300 border py-20 px-4 w-full
+      </div>
+      <div className='flex justify-evenly'>
+        <div className="flex flex-wrap justify-start">
+          <form className="w-full max-w-lg m-auto py-10 mt-10 px-10 border" onSubmit={decrypt}>
+            <h1>Decryption Page</h1>
+            <div>
+              <label className="text-gray-600 font-medium" htmlFor="message"> Encrypted Message:</label>
+              <textarea className="border-solid border-gray-300 border py-20 px-4 w-full
         rounded text-gray-700" rows={3} cols={5} name="encryptedMessage" placeholder='Message'
-              value={state.encryptedMessage} onChange={onInputChange} required />
-          </div>
+                value={state.encryptedMessage} onChange={onInputChange} required />
+            </div>
+            <div>
+              <label className="text-gray-600 font-medium" htmlFor="phoneNumber">Decryption Key:</label>
+              <input className="border-solid border-gray-300 border py-2 px-4 w-full
+        rounded text-gray-700" type="text" name="decryptionKey" placeholder='Your decryption'
+                value={state.decryptionKey} onChange={onInputChange} required />
+            </div>
+            <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border py-3 px-6 font-semibold text-md rounded"
+              type="submit">Submit</button>
+          </form>
+        </div>
+        <div className="w-full max-w-lg m-auto py-10 mt-10 px-10 border">
           <div>
-            <label className="text-gray-600 font-medium" htmlFor="phoneNumber">Decryption Key:</label>
-            <input className="border-solid border-gray-300 border py-2 px-4 w-full
-        rounded text-gray-700" type="text" name="decryptionKey" placeholder='Must start with +254'
-              value={state.decryptionKey} onChange={onInputChange} required />
+            <label className="text-gray-600 font-medium" htmlFor="message"> Decrypted Message:</label>
+            {decryptedMessage && (
+              <p className={`${decryptedMessage.success ? 'success' : 'error'}`}>
+                {decryptedMessage.message}
+              </p>
+            )}
           </div>
-          <button className="mt-4 w-full bg-green-400 hover:bg-green-600 text-green-100 border py-3 px-6 font-semibold text-md rounded"
-            type="submit">Submit</button>
-        </form>
-
-        <div>
-          <label className="text-gray-600 font-medium" htmlFor="message"> Decrypted Message:</label>
-          {decryptedMessage && (
-            <p className={`${decryptedMessage.success ? 'success' : 'error'}`}>
-              {decryptedMessage.message}
-            </p>
-          )}
-
         </div>
       </div>
     </div>
@@ -134,3 +133,4 @@ export const EncryptionPage = () => {
 }
 
 export default EncryptionPage;
+
