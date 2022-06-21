@@ -11,4 +11,6 @@ On the same page, the user inputs the message and the decryption key where on su
 Node.js and express.js was used as the backend of this project while React was used as the frontend.
 The email sending was handled by NodeMailer and OTP message handled via the Twilio API
 
+Prsented as coursework for the group Heckers
+
 
