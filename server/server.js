@@ -65,6 +65,7 @@ app.post('/send', (req, res) => {
              <p>${encryptedMessage}</p>`,
     };
 
+    //send key through SMS to the user
     client.messages
       .create({
         body: "Your security key: " + securityKey,
@@ -107,7 +108,7 @@ app.post('/decrypt', (req, res) => {
       if(error) {
         res.status(500).send({
           success: false,
-          message: 'Something went wrong. Try again later'
+          message: 'Bad Decryption'
         });
       } else{
         res.send({
