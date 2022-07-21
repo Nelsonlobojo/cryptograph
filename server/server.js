@@ -43,7 +43,7 @@ function decrypt3DES(data, key) {
 
 // security key that will be shared with the client via otp and encryption
 
-const securityKey = crypto.randomBytes(32).toString('base64');
+const securityKey = crypto.randomBytes(8).toString('base64');
 
 
 // email sending function
